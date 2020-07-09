@@ -8,9 +8,11 @@ class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      logo: logo1
+      logo: logo1,
+      logoStyle:{width: "100px",width: "100px",borderRadius:'500px',boxShadow: "-5px 5px 5px rgba(0,0,0,0.6)" }
     };
   }
+ 
 
   componentDidMount() {
     const nav = $("nav");
@@ -32,14 +34,16 @@ class Navbar extends React.Component {
     });
 
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 50) {
+      if (window.pageYOffset > 200) {
         document
           .querySelector(".navbar-expand-md")
           .classList.add("navbar-reduce");
         document
           .querySelector(".navbar-expand-md")
           .classList.remove("navbar-trans");
-        this.setState({ logo: logo2 });
+        this.setState({ logo: logo1 });
+        this.setState({width: "100px",width: "100px",borderRadius:'500px',boxShadow: "-15px 15px 15px rgba(255,0,0,0.6),filter: grayscale(1) " })
+
       } else {
         document
           .querySelector(".navbar-expand-md")
@@ -47,7 +51,10 @@ class Navbar extends React.Component {
         document
           .querySelector(".navbar-expand-md")
           .classList.remove("navbar-reduce");
-        this.setState({ logo: logo1 });
+        this.setState({ logo: logo2 });
+        this.setState({width: "100px",width: "100px",borderRadius:'500px',boxShadow: "-5px 5px 5px rgba(0,0,0,0.6)" })
+
+
       }
     });
 
@@ -79,7 +86,9 @@ class Navbar extends React.Component {
     });
   }
 
+
   render() {
+ 
     return (
       <nav
         className="navbar navbar-b navbar-trans navbar-expand-md fixed-top"
@@ -90,7 +99,7 @@ class Navbar extends React.Component {
             <img
               src={this.state.logo}
               alt="logo"
-              style={{ maxWidth: "100px" }}
+              style={this.state.logoStyle}
             />
           </a>
           <button
