@@ -7,7 +7,7 @@ import './animate.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './img/icons/css/ionicons.css';
 import './img/font-awesome/css/font-awesome.css';
-import 'lightbox2/dist/css/lightbox.min.css'
+import 'lightbox2/dist/css/lightbox.min.css';
 import './style.css';
 
 //import js libraries
@@ -27,20 +27,34 @@ import Portfolio from './components/portfolio.jsx';
 import Contact from './components/contact.jsx';
 import BackToTop from './components/back-top.jsx';
 import Preloader from './components/preloader';
+import Admin from './Admin/Admin';
 
-
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 ReactDOM.render(
-    <React.Fragment>
-        <Navbar />
-        <Intro />
-        <About />
-        <Portfolio />
-        <Contact />
-        <BackToTop />
-        <Preloader />
-    </React.Fragment>,
-document.getElementById('root'));
+  <Router>
+    <Switch>
+      <Route path="/" exact>
+        <React.Fragment>
+          <Navbar />
+          <Intro />
+          <About />
+          <Portfolio />
+          <Contact />
+          <BackToTop />
+          <Preloader />
+        </React.Fragment>
+      </Route>
+    </Switch>
+    <Switch>
+      <Route exact path="/admin">
+        <Admin></Admin>
+      </Route>
+    </Switch>
+  </Router>,
+
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

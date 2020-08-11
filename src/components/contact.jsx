@@ -1,14 +1,12 @@
-import React from "react";
-import imageOverlay from "../img/earth.jpg";
+import React from 'react';
+import imageOverlay from '../img/earth.jpg';
+import ParticlesBg from 'particles-bg';
 
 class Contact extends React.Component {
   render() {
     return (
-      <section
-        className="paralax-mf footer-paralax bg-image sect-mt4 route"
-        style={{ backgroundImage: "url(" + imageOverlay + ")" }}
-      >
-        <div className="overlay-mf"></div>
+      <section className="paralax-mf footer-paralax bg-image sect-mt4 route">
+        <div className="overlay-mf" style={{ backgroundColor: 'black' }}></div>
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
@@ -152,12 +150,12 @@ class Contact extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
-                <div className="copyright-box">
-                </div>
+                <div className="copyright-box"></div>
               </div>
             </div>
           </div>
         </footer>
+        <ParticlesBg type="square" bg={true} />
       </section>
     );
   }
