@@ -163,6 +163,11 @@ export default function Dashboard() {
                     index={index}
                     handleRemove={handleRemove}
                     thubnail={p.thumbnail}
+                    liveDemoLink={p.liveDemoLink}
+                    gitHubLink={p.gitHubLink}
+                    techUsed={p.techUsed}
+                    thumbnail={p.thumbnail}
+                    getData={getData}
                   ></Card>
                 </Grid>
               ))

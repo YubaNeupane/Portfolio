@@ -6,7 +6,7 @@ class Preloader extends React.Component {
     $(window).on('load', function () {
       if ($('#preloader').length) {
         $('#preloader')
-          .delay(50)
+          .delay(5)
           .fadeOut('slow', function () {
             $(this).remove();
           });

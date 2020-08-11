@@ -50,7 +50,7 @@ export default function CardViewer(props) {
     <Card className={classes.root} elevation={5}>
       <CardHeader
         title={props.name}
-        subheader={new Date(props.time).toLocaleString()}
+        // subheader={new Date(props.time).toLocaleString()}
       />
       <CardMedia className={classes.media} image={props.thubnail} />
       <CardContent>
@@ -59,12 +59,21 @@ export default function CardViewer(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <EditProject index={props.index} />
+        <EditProject
+          index={props.index}
+          name={props.name}
+          liveDemoLink={props.liveDemoLink}
+          description={props.description}
+          gitHubLink={props.gitHubLink}
+          techUsed={props.techUsed}
+          thumbnail={props.thumbnail}
+          getData={props.getData}
+        />
 
         <RemoveProject
           index={props.index}
-          name={props.name}
           click={props.handleRemove}
+          name={props.name}
         ></RemoveProject>
       </CardActions>
     </Card>
