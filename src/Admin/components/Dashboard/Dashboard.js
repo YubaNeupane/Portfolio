@@ -123,7 +123,6 @@ export default function Dashboard() {
 
   const classes = useStyles();
 
-  console.log(data);
   return (
     <div style={{ justifyItems: 'center', alignSelf: 'center' }}>
       <Navbar logout={handleLogout} />

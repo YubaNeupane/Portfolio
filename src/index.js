@@ -29,32 +29,38 @@ import BackToTop from './components/back-top.jsx';
 import Preloader from './components/preloader';
 import Admin from './Admin/Admin';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/" exact>
-        <React.Fragment>
-          <Navbar />
-          <Intro />
-          <About />
-          <Portfolio />
-          <Contact />
-          <BackToTop />
-          <Preloader />
-        </React.Fragment>
-      </Route>
-    </Switch>
-    <Switch>
-      <Route exact path="/admin">
-        <Admin></Admin>
-      </Route>
+      <Route path="/" exact component={MainPage} />
+      <Route path="/admin" component={Admin} />
     </Switch>
   </Router>,
 
   document.getElementById('root')
 );
+
+export default function MainPage() {
+  return (
+    <React.Fragment>
+      <Navbar />
+      <Intro />
+      <About />
+      <Portfolio />
+      <Contact />
+      <BackToTop />
+      <Preloader />
+    </React.Fragment>
+  );
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

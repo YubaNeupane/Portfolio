@@ -59,7 +59,7 @@ export default function CardViewer(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <EditProject />
+        <EditProject index={props.index} />
 
         <RemoveProject
           index={props.index}
